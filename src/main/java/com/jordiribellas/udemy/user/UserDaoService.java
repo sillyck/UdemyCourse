@@ -12,16 +12,24 @@ public class UserDaoService {
 	// UserDaoService > Static List
 	
 	private static List<User> users = new ArrayList<>();
+	private static int userCount = 0;
 	
 	static {
-		users.add(new User(1,"Jordi", LocalDate.now().minusYears(22)));
-		users.add(new User(2,"Claudia", LocalDate.now().minusYears(13)));
+		users.add(new User(userCount++,"Jordi", LocalDate.now().minusYears(22)));
+		users.add(new User(userCount++,"Claudia", LocalDate.now().minusYears(13)));
 	}
 	
 	public List<User> findAll(){
 		return users;
 	}
 	
-	//public User save(User user) {
-	//public User findeOne (int id){
+	public User getUsersById(int id){
+		return users.get(id);
+	}
+	
+	public User saveUser(User user) {
+		user.setId(userCount++);
+		users.add(user);
+		return user;
+	}
 }
