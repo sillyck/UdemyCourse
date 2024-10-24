@@ -24,11 +24,16 @@ public class UserDaoService {
 	}
 	
 	public User getUsersById(int id){
-		return users.get(id);
+	    for(User user : users){
+	        if(user.getId() == id){
+	            return user;
+	        }
+	    }
+	    return null;
 	}
 	
 	public User saveUser(User user) {
-		user.setId(userCount++);
+		user.setId(++userCount);
 		users.add(user);
 		return user;
 	}

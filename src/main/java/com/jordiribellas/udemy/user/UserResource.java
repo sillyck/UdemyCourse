@@ -30,9 +30,16 @@ public class UserResource {
 	
 	//GET one user
 	@GetMapping("/users/{id}")
-	public User getUsersById(@PathVariable int id){
-		return service.getUsersById(id);
+	public User getUsersById(@PathVariable int id) {
+	    User user = service.getUsersById(id);
+	    
+	    if (user == null) {
+	        throw new UserNotFoundException("id: " + id);
+	    }
+	    
+	    return user;
 	}
+
 	
 	@PostMapping("/users")
 	public ResponseEntity<Object> createUser(@RequestBody User user) {
