@@ -17,7 +17,9 @@ public class UserDaoService {
 	
 	static {
 		users.add(new User(userCount++,"Jordi", LocalDate.now().minusYears(22)));
-		users.add(new User(userCount++,"Claudia", LocalDate.now().minusYears(13)));
+		users.add(new User(userCount++,"Claudia", LocalDate.now().minusYears(14)));
+		users.add(new User(userCount++,"Hector", LocalDate.now().minusYears(22)));
+		users.add(new User(userCount++,"Eloy", LocalDate.now().minusYears(22)));
 	}
 	
 	public List<User> findAll(){
