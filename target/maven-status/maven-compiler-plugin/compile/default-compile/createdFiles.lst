@@ -1,0 +1,9 @@
+com\jordiribellas\udemy\demo\holamon\HolaMonController.class
+com\jordiribellas\udemy\exception\CustomizedResponseEntityExceptionHandler.class
+com\jordiribellas\udemy\user\User.class
+com\jordiribellas\udemy\demo\holamon\holaMonBean.class
+com\jordiribellas\udemy\user\UserDaoService.class
+com\jordiribellas\udemy\user\UserNotFoundException.class
+com\jordiribellas\udemy\user\UserResource.class
+com\jordiribellas\udemy\exception\ErrorDetails.class
+com\jordiribellas\udemy\DemoApplication.class
