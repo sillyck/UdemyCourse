@@ -17,5 +17,14 @@ public class VersioningPersonController {
 		return new PersonV2(new Name("Javier", "Ibarra"));
 	}
 
+	@GetMapping(path = "/person", params = "version=1", produces = MediaType.APPLICATION_JSON_VALUE)
+	public PersonV1 getFirstVersionOfPersonRequestPrameter() {
+		return new PersonV1("Javier Ibarra");
+	}
+	
+	@GetMapping(path = "/person", params = "version=2", produces = MediaType.APPLICATION_JSON_VALUE)
+	public PersonV2 getSecondVersionOfPersonRequestPrameter() {
+		return new PersonV2(new Name("Javier", "Ibarra"));
+	}
 
 }
