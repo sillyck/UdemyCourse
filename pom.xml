@@ -83,13 +83,11 @@
 	    	<artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
 	    	<version>2.6.0</version>
 	 	</dependency>
-	 	
-	 	<!--	 	
-		<dependency>
-		    <groupId>com.fasterxml.jackson.dataformat</groupId>
-		    <artifactId>jackson-dataformat-xml</artifactId>
+	 	<dependency>
+		    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>8.0.0.Final</version> <!-- Asegúrate de utilizar una versión compatible con Spring Boot 3.x -->
 		</dependency>
-		-->
 
 	</dependencies>
 	<build>
