@@ -1,5 +1,6 @@
 com\jordiribellas\udemy\user\UserJPAResource.class
 com\jordiribellas\udemy\versioning\PersonV2.class
+com\jordiribellas\udemy\user\Post.class
 com\jordiribellas\udemy\demo\holamon\holaMonBean.class
 com\jordiribellas\udemy\filtering\FilteringController.class
 com\jordiribellas\udemy\user\UserDaoService.class
