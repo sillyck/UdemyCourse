@@ -9,6 +9,7 @@ com\jordiribellas\udemy\versioning\PersonV1.class
 com\jordiribellas\udemy\filtering\SomeBean.class
 com\jordiribellas\udemy\user\UserResource.class
 com\jordiribellas\udemy\exception\ErrorDetails.class
+com\jordiribellas\udemy\jpa\PostRepository.class
 com\jordiribellas\udemy\DemoApplication.class
 com\jordiribellas\udemy\versioning\VersioningPersonController.class
 com\jordiribellas\udemy\demo\holamon\HolaMonController.class

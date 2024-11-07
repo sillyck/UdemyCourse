@@ -35,13 +35,13 @@ public class UserJPAResource {
 	//GET all users
 	@GetMapping("/jpa/users")
 	public List<User> getAllUsers(){
-		return repository.findAll();
+		return userRepository.findAll();
 	}
 	
 	//GET one user
 	@GetMapping("/jpa/users/{id}")
 	public EntityModel<User> getUsersById(@PathVariable int id) {
-	    Optional<User> user = repository.findById(id);
+	    Optional<User> user = userRepository.findById(id);
 	    
 	    if (user.isEmpty()) {
 	        throw new UserNotFoundException("id: " + id);
@@ -57,12 +57,12 @@ public class UserJPAResource {
 	
 	@DeleteMapping("/jpa/users/{id}")
 	public void deleteUser(@PathVariable int id) {
-	    repository.deleteById(id);
+	    userRepository.deleteById(id);
 	}
 	
 	@GetMapping("/jpa/users/{id}/posts")
 	public List<Post> findPostsByUser(@PathVariable int id) {
-		Optional<User> user = repository.findById(id);
+		Optional<User> user = userRepository.findById(id);
 	    
 	    if (user.isEmpty()) {
 	        throw new UserNotFoundException("id: " + id);
@@ -73,7 +73,7 @@ public class UserJPAResource {
 
 	@PostMapping("/jpa/users")
 	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
-		User saved = repository.save(user);
+		User saved = userRepository.save(user);
 		
 		//users/3 => /users/{id}
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -86,7 +86,7 @@ public class UserJPAResource {
 	
 	@PostMapping("/jpa/users/{id}/posts")
 	public ResponseEntity<Object> createPostsForUser(@PathVariable int id, @Valid @RequestBody Post post) {
-		Optional<User> user = repository.findById(id);
+		Optional<User> user = userRepository.findById(id);
 	    
 	    if (user.isEmpty()) {
 	        throw new UserNotFoundException("id: " + id);
