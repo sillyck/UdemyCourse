@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.jordiribellas.udemy.jpa.PostRepository;
 import com.jordiribellas.udemy.jpa.UserRepository;
 
 import jakarta.validation.Valid;
@@ -28,6 +29,8 @@ import lombok.AllArgsConstructor;
 public class UserJPAResource {
 
 	private UserRepository repository;
+	private PostRepository postRepository;
+	
 	
 	//GET all users
 	@GetMapping("/jpa/users")
@@ -80,4 +83,24 @@ public class UserJPAResource {
 		
 		return ResponseEntity.created(location).build();
 	}
+	
+	@PostMapping("/jpa/users/{id}/posts")
+	public ResponseEntity<Object> createPostsForUser(@PathVariable int id, @Valid @RequestBody Post post) {
+		Optional<User> user = repository.findById(id);
+	    
+	    if (user.isEmpty()) {
+	        throw new UserNotFoundException("id: " + id);
+	    }
+	    
+	    post.setUser(user.get());
+	    
+	    URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+				.path("/{id}")
+				.buildAndExpand(postRepository.save(post).getId())
+				.toUri();
+		
+		return ResponseEntity.created(location).build();
+	}
+	
+	
 }
