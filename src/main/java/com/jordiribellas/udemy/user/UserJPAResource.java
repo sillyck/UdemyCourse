@@ -56,6 +56,17 @@ public class UserJPAResource {
 	public void deleteUser(@PathVariable int id) {
 	    repository.deleteById(id);
 	}
+	
+	@GetMapping("/jpa/users/{id}/posts")
+	public List<Post> findPostsByUser(@PathVariable int id) {
+		Optional<User> user = repository.findById(id);
+	    
+	    if (user.isEmpty()) {
+	        throw new UserNotFoundException("id: " + id);
+	    }
+	    
+	    return user.get().getPosts();
+	}
 
 	@PostMapping("/jpa/users")
 	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
