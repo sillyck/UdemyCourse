@@ -28,7 +28,7 @@ import lombok.AllArgsConstructor;
 @RestController
 public class UserJPAResource {
 
-	private UserRepository repository;
+	private UserRepository userRepository;
 	private PostRepository postRepository;
 	
 	
