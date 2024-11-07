@@ -3,6 +3,7 @@ package com.jordiribellas.udemy.user;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Size;
@@ -19,6 +20,7 @@ import lombok.ToString;
 public class Post {
 
     @Id
+    @GeneratedValue
     private Integer id;
     
     @Size(min = 10, message = "Description should have at least 10 characters")
