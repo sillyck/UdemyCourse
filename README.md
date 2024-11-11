@@ -1,4 +1,4 @@
-# Spring Boot Project - Udemy Course
+# Spring Boot Project - Udemy Course User and Posts
 
 This repository contains the source code for a Spring Boot project developed as part of a Udemy course. The main goal of this project is to apply and reinforce the concepts learned during the course, including creating a RESTful API, managing data persistence with JPA and H2, and implementing Spring Boot’s core features.
 
